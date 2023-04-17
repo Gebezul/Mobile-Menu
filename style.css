@@ -1,0 +1,35 @@
+.mobile-menu {
+    /* display: none; скрыть меню на десктопе */
+
+  }
+  
+  @media screen and (max-width: 768px) {
+    .mobile-menu {
+      display: block; /* показать меню на мобильном устройстве */
+    }
+  
+    .mobile-menu ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  
+    .mobile-menu li {
+      margin: 0;
+      padding: 0;
+      display: block;
+      border-bottom: 1px solid #ccc;
+    }
+  
+    .mobile-menu a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+  
+    .mobile-menu a:hover {
+      background-color: #eee;
+    }
+  }
+  
