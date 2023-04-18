@@ -1,35 +1,129 @@
-.mobile-menu {
-    /* display: none; скрыть меню на десктопе */
+* {
+  margin: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
 
-  }
-  
-  @media screen and (max-width: 768px) {
-    .mobile-menu {
-      display: block; /* показать меню на мобильном устройстве */
-    }
-  
-    .mobile-menu ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-  
-    .mobile-menu li {
-      margin: 0;
-      padding: 0;
-      display: block;
-      border-bottom: 1px solid #ccc;
-    }
-  
-    .mobile-menu a {
-      display: block;
-      padding: 10px;
-      text-decoration: none;
-      color: #333;
-    }
-  
-    .mobile-menu a:hover {
-      background-color: #eee;
-    }
-  }
-  
+body {
+    transition: all ease 1s;
+}
+
+.hamburger {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 96px;
+  height: 96px;
+  font-size: 0;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.hamburger:focus {
+  outline: none;
+}
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  top: 44px;
+  left: 18px;
+  right: 18px;
+  height: 8px;
+  background-color: #fff;
+}
+
+.hamburger span::before,
+.hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #fff;
+  content: "";
+}
+
+.hamburger span::before {
+  top: -20px;
+}
+
+.hamburger span::after {
+  bottom: -20px;
+}
+
+.hamburger-line {
+  background-color: blueviolet;
+}
+
+.hamburger-line {
+  transition: background 0s 0.3s;
+}
+
+.hamburger-line span::before,
+.hamburger-line span::after {
+  transition-duration: 0.3s, 0.3s;
+  transition-delay: 0.3s, 0s;
+}
+
+.hamburger-line span::before {
+  transition-property: top, transform;
+}
+
+.hamburger-line span::after {
+  transition-property: bottom, transform;
+}
+
+.hamburger-line.is-active {
+    background-color: darkgoldenrod;
+}
+
+.hamburger-line.is-active span {
+    background: none;
+}
+
+.hamburger-line.is-active span::before {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+.hamburger-line.is-active span::after {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+.hamburger-line.is-active span::before, .hamburger-line.is-active span::after {
+transition-delay: 0s, 0.3s;
+}
+
+#menu {
+    width: 300px;
+    margin-left: -204px;
+    background-color: grey;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: all ease 1s;
+    z-index: 99;
+}
+
+.container {
+    width: 80%;
+    min-width: 1000px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.body-active {
+    margin-left: 300px;
+}
+
+#menu.nav-active {
+margin-left: 0;
+}
